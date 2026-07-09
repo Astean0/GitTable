@@ -246,7 +246,7 @@ export default function ScheduleBuilder({ careerId }: ScheduleBuilderProps) {
             <thead>
               <tr>
                 <th className="border border-gray-100 px-3 py-2 text-xs text-gray-500 w-28">
-                  Hora
+                  HOUR
                 </th>
                 {DAYS.map((d) => (
                   <th
@@ -295,9 +295,9 @@ export default function ScheduleBuilder({ careerId }: ScheduleBuilderProps) {
 
       <div className="w-80 flex flex-col gap-4">
         <div className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm">
-          <h2 className="text-lg font-semibold text-gray-900 mb-3">Crear bloque</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-3">create block</h2>
           <div className="space-y-4">
-            <label className="block text-sm font-medium text-gray-700">Semestre</label>
+            <label className="block text-sm font-medium text-gray-700">semester</label>
             <select
               value={selectedSemesterId}
               onChange={(e) => setSelectedSemesterId(e.target.value)}
@@ -309,7 +309,7 @@ export default function ScheduleBuilder({ careerId }: ScheduleBuilderProps) {
               ))}
             </select>
 
-            <label className="block text-sm font-medium text-gray-700">Curso</label>
+            <label className="block text-sm font-medium text-gray-700">course</label>
             <select
               value={selectedCourseId}
               onChange={(e) => setSelectedCourseId(e.target.value)}
@@ -322,7 +322,7 @@ export default function ScheduleBuilder({ careerId }: ScheduleBuilderProps) {
               ))}
             </select>
 
-            <label className="block text-sm font-medium text-gray-700">Sala</label>
+            <label className="block text-sm font-medium text-gray-700">room</label>
             <select
               value={selectedClassroomId}
               onChange={(e) => setSelectedClassroomId(e.target.value)}
@@ -337,7 +337,7 @@ export default function ScheduleBuilder({ careerId }: ScheduleBuilderProps) {
 
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <label className="block text-sm font-medium text-gray-700">Día</label>
+                <label className="block text-sm font-medium text-gray-700">day</label>
                 <select
                   value={selectedDay}
                   onChange={(e) => setSelectedDay(e.target.value as DayOfWeek)}
@@ -352,7 +352,7 @@ export default function ScheduleBuilder({ careerId }: ScheduleBuilderProps) {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700">Horario</label>
+                <label className="block text-sm font-medium text-gray-700">schedule</label>
                 <select
                   value={selectedTimeSlot}
                   onChange={(e) => setSelectedTimeSlot(e.target.value as TimeSlot)}
