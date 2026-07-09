@@ -34,7 +34,7 @@ function normalizeTime(time: string): string {
 export default function ScheduleBuilder({ careerId }: ScheduleBuilderProps) {
   const params = useParams()
   const universityId = params.id as string
-  const { semesters, loading: loadingSemesters } = useSemesters(careerId)
+  const { semesters } = useSemesters(careerId)
 
   const searchParams = useSearchParams()
   const urlSemesterId = searchParams?.get('semesterId') ?? ''
@@ -206,7 +206,7 @@ export default function ScheduleBuilder({ careerId }: ScheduleBuilderProps) {
     } finally {
       setCreating(false)
     }
-  }, [careerId, checkAllConflicts, createSchedule, courses, selectedClassroomId, selectedCourseId, selectedDay, selectedTimeSlot])
+  }, [careerId, checkAllConflicts, createSchedule, courses, selectedClassroomId, selectedCourseId, selectedDay, selectedSemesterId, selectedTimeSlot])
 
   const handleDeleteBlock = useCallback(
     async (scheduleId: string) => {

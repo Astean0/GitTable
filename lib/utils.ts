@@ -1,4 +1,4 @@
-import { TIME_SLOTS, type DayOfWeek, type TimeSlot } from './types'
+import { type DayOfWeek, type TimeSlot } from './types'
 
 export function timeToMinutes(time: string): number {
   const [hours, minutes] = time.split(':').map(Number)

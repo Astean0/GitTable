@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
-import { useRouter } from 'next/navigation'
 import { useSemesters } from '@/hooks/useSemesters'
 import { useCareers } from '@/hooks/useCareers'
 import Sidebar from '@/app/dashboard/components/Sidebar'
@@ -29,7 +28,7 @@ export default function CareersPage() {
   const handleSubmit = async (data: CareerFormData) => {
     try {
       if (editing) {
-        await updateCareer(editing.id, { name: data.name, semester: data.semester })
+        await updateCareer(editing.id, { name: data.name })
         setToast({ message: 'Career updated', type: 'success' })
       } else {
         await createCareer(data)
@@ -137,7 +136,7 @@ function SemesterLinks({ careerId, universityId }: { careerId: string; universit
           key={s.id}
           href={`/dashboard/universities/${universityId}/careers/${careerId}/schedules?semesterId=${s.id}`}
         >
-          <Button size="xs" variant="ghost">{s.name}</Button>
+          <Button size="sm" variant="ghost">{s.name}</Button>
         </Link>
       ))}
     </div>
