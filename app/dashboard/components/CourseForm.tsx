@@ -2,6 +2,7 @@
 
 import { useForm, type Resolver } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
 import Input from '@/components/ui/Input'
 import Button from '@/components/ui/Button'
 import { courseSchema, type CourseFormData } from '@/lib/validations'
@@ -27,7 +28,7 @@ export default function CourseForm({
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<CourseFormData>({
-    resolver: zodResolver(courseSchema),
+    resolver: zodResolver(courseSchema as z.ZodType<CourseFormData>) as unknown as Resolver<CourseFormData>,
     defaultValues: {
       name: initial?.name ?? '',
       hours_per_week: initial?.hours_per_week ?? 3,
