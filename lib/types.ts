@@ -66,7 +66,7 @@ export interface Schedule {
   start_time: string
   end_time: string
   created_at: string
-  courses?: Course & { professors?: Professor }
+  courses?: Course & { professors?: Professor; careers?: Career }
   classrooms?: Classroom
   semesters?: Semester
 }
